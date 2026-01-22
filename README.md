@@ -58,14 +58,15 @@ Create a file named .env in root folder:
 ## 📸 UI Preview
 
 ### ✅ Home + Upload + Daily Goals
-![UI Preview 1](ui-1.png)
+![UI Preview 1](uni-1.png)
 
 ### ✅ Generate Plan + Chatbot
-![UI Preview 2](ui-2.png)
+![UI Preview 2](uni-2.png)
 
 
             
       
+
 
 
 
