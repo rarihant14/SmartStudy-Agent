@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# env
+.env
+
+# DB + user data
+studyplanner.db
+uploads/
+chroma_db/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Virtual environments (uv)
+.venv/
+
+# logs
+*.log

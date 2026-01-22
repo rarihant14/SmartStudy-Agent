@@ -1,0 +1,11 @@
+flask
+python-dotenv
+langgraph
+langchain
+langchain-groq
+pydantic
+sqlite-utils
+werkzeug
+chromadb
+pypdf
+tiktoken

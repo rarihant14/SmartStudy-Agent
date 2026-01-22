@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Study Planner </title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="bg"></div>
+
+<main class="container">
+  <header class="header">
+    <div class="badge">🤖 Agentic + RAG</div>
+    <h1>AI Study Planner</h1>
+    <p class="subtitle">Upload syllabus PDF → Plan is made using syllabus context ✅</p>
+  </header>
+
+  <!-- ✅ Upload PDF -->
+  <section class="card">
+    <h2>📄 Upload Syllabus PDF</h2>
+    <input type="file" id="pdfFile" accept="application/pdf"/>
+    <div class="actions">
+      <button class="btn primary" onclick="uploadPDF()">Upload & Index</button>
+    </div>
+    <p class="meta" id="pdfStatus">No PDF uploaded yet.</p>
+  </section>
+
+  <!-- ✅ Daily Goal Mode -->
+  <section class="card">
+    <h2>🎯 Daily Goal Mode (3 Topics Mandatory)</h2>
+    <div class="actions">
+      <button class="btn primary" onclick="loadDailyGoals()">Show Today’s 3 Goals</button>
+    </div>
+    <div id="dailyGoalsBox" style="margin-top:14px;"></div>
+  </section>
+
+  <!-- ✅ Suggest next topic -->
+  <section class="card">
+    <h2>🚀 Suggest Next Topic</h2>
+    <div class="actions">
+      <button class="btn primary" onclick="getNextTopic()">Suggest Topic</button>
+    </div>
+    <div id="nextTopicBox" style="margin-top:14px;"></div>
+  </section>
+
+  <!-- ✅ Generate Plan -->
+  <section class="card">
+    <h2>📌 Generate Plan</h2>
+
+    <div class="grid">
+      <div class="field">
+        <label>Subjects</label>
+        <input id="subjects" type="text" placeholder="DBMS, Deep Learning, GLM"/>
+        <small>Comma separated</small>
+      </div>
+
+      <div class="field">
+        <label>Exam Date</label>
+        <input id="exam_date" type="date"/>
+      </div>
+
+      <div class="field">
+        <label>Hours/Day</label>
+        <input id="hours" type="number" value="3" min="1" max="12"/>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" onclick="generatePlan()">⚡ Generate Plan </button>
+      <button class="btn ghost" onclick="loadSavedPlans()">📦 Load Saved</button>
+      <button class="btn danger" onclick="deleteAllPlans()">🗑️ Delete All Plans</button>
+    </div>
+
+    <div id="thinkingBox" class="thinking hidden">
+      <div class="spinner"></div>
+      <div>
+        <b>AI is thinking...</b>
+        <p id="jokeLine">Loading jokes...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Plan Output -->
+  <section class="card">
+    <div class="planHeader">
+      <h2>✅ Your Plan</h2>
+      <span class="hint">Click Done / Delete</span>
+    </div>
+    <div id="planOutput" class="planList"></div>
+  </section>
+
+  <!-- ✅ Chatbot -->
+  <section class="card">
+    <h2>💬 Ask Doubts (Chatbot)</h2>
+
+    <div class="chatBox" id="chatBox"></div>
+
+    <div class="chatInputRow">
+      <input id="chatInput" placeholder="Example: Why AI gave Normalization 4 hours?"/>
+      <button class="btn primary" onclick="sendChat()">Send</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Flask + LangGraph + SQLite + Groq + ChromaDB ✅</p>
+  </footer>
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+

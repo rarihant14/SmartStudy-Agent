@@ -1,0 +1,17 @@
+[project]
+name = "ai-study-planner"
+version = "0.1.0"
+description = "AI-powered Study Planner built with Flask & LangGraph. Uses Groq LLM + ChromaDB RAG to generate syllabus-based daily study plans, suggest topics, daily goal mode, and a smart chatbot to explain study time allocation."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "chromadb>=1.4.1",
+    "flask>=3.1.2",
+    "langchain>=1.2.6",
+    "langchain-groq>=1.1.1",
+    "langgraph>=1.0.6",
+    "pypdf>=6.6.0",
+    "python-dotenv>=1.2.1",
+    "tiktoken>=0.12.0",
+    "werkzeug>=3.1.5",
+]
