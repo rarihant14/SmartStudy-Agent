@@ -37,6 +37,27 @@ An **Agentic AI Study Planner Web App** that generates a **day-wise study plan**
 
 
 ---
+Setup (Normal pip method)
+✅ 1) Clone the project:
+
+      git clone <rarihant14>
+      cd ai_study_planner
+
+✅ 2) Install dependencies
+        
+        pip install -r requirements.txt
+
+✅ 3) Create .env file
+Create a file named .env in root folder:
+
+      GROQ_API_KEY=your_groq_api_key_here
+
+✅ 4) Run the app
+          
+            python app.py
+      
+
+
 
 
 
